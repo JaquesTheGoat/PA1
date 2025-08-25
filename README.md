@@ -18,74 +18,96 @@ This repository contains Python scripts developed for EXPERIMENT 1 - Introductio
 --- 
 
 
-### 1. Normalization Problem
+### 1. Alphabet Soup Problem
 
-###### A randomly generated 5x5 array is required to be normalized for this task. To normalize the random array, first produce it, then center it by subtracting the mean, then scale it by dividing it by the standard deviation. Save the normalized array to a file named `X_normalized.npy}.
-
-
-**Function:**
-
-```python
-
-import numpy as np
-
-# Create a 5x5 random values
-X = np.random.random((5, 5))
-
-# Calculate the mean and standard deviation
-X_mean = np.mean(X)
-X_std = np.std(X)
-
-# Standardize the matrix
-X_normalized = (X - X_mean) / X_std
-
-# Save the standardized matrix
-np.save('X_normalized.npy', X_normalized)
-
-# Load and display the saved data
-print("\nOriginal Array:\n", X)
-print("\nNormalized Array:\n", X_normalized)
-
-```
-**Output:**
-
-<img width="582" height="261" alt="image" src="https://github.com/user-attachments/assets/2bdfd781-cfb4-4947-99d2-fd617fa31c8c" />
-
-
-### 2. Divisible by 3 Problem
-
-###### The task is to create a 10x10 array containing the squares of the initial 100 positive integers. Finding every element in the array divisible by three is the aim, and the elements saved in a file named `div_by_3.npy` are the result.
+###### Create a function that takes a string and returns a string with its letters in alphabetical order.
 
 
 **Function:**
 
 ```python
 
-import numpy as np
+def sort_string_alphabetically():
+    # Get a string from the user
+    user_string = input("enter a string: ")
+    
+    # Arrange the characters in alphabetical order
+    sorted_string = ''.join(sorted(user_string))
+    
+    return sorted_string
 
-# Generate random positive integer from 1 to 100
-squares = np.arange(1, 101)**2
+# Example of how to use the function:
+result = sort_string_alphabetically()
+print("Output:", result)
 
-# Reshape into a 10x10 matrix
-squares_10x10 = squares.reshape(10, 10)
+```
+**Output:**
 
-# Extract elements divisible by 3
-div_by_3 = squares_10x10[squares_10x10 % 3 == 0]
+<img width="348" height="61" alt="Screen Shot 2025-08-25 at 12 10 50 PM" src="https://github.com/user-attachments/assets/b511a7d5-fd02-47a6-91ee-7d09c7256888" />
 
-# Save the result to a file
-np.save('div_by_3.npy', div_by_3)
 
-# Load and display the saved data
-data = np.load('div_by_3.npy')
-data
+### 2. Emoticon Problem
+
+###### Create a function that changes specific words into emoticons. Given a sentence as a string, replace the words smile, grin, sad, and mad with their corresponding emoticon:
+
+**Function:**
+
+```python
+
+def main():
+    # Get user input
+    sentence = input("Enter a sentence: ")
+    
+    # Convert words
+    sentence = convert(sentence)
+    
+    # Print converted
+    print("Output sentence:", sentence)
+
+def convert(sentence):
+    # Replace words with emoticons
+    sentence = sentence.replace("smile", ":)")
+    sentence = sentence.replace("grin", ":D")
+    sentence = sentence.replace("sad", ":(")
+    sentence = sentence.replace("mad", ">:(")
+    
+    # Return modified sentence
+    return sentence
+
+# Start program
+main()
 
 ```
 
 **Output:**
 
-<img width="631" height="119" alt="image" src="https://github.com/user-attachments/assets/808d9231-857b-43b6-84db-51b2803995eb" />
+<img width="254" height="59" alt="Screen Shot 2025-08-25 at 12 13 07 PM" src="https://github.com/user-attachments/assets/d073f3b7-24a3-46ef-9b68-1d8249eddfa5" />
 
 
+### 3. Unpacking list Problem
+
+###### Unpack the list, write your code here into three variables, being first, middle, and last, with middle being everything in between the first and last element. Then print all three variables.
+
+**Function:** 
+
+```python
+def unpack_and_display():
+    user_input = input("Please provide a list of items: ")
+    items = user_input.split()
+    
+    first_item, *middle_items, last_item = items
+    
+    print("First item:", first_item)
+    print("Middle items:", middle_items)
+    print("Last item:", last_item)
+
+unpack_and_display()
+
+```
+
+**Output:**
+
+<img width="476" height="91" alt="Screen Shot 2025-08-25 at 12 16 26 PM" src="https://github.com/user-attachments/assets/b02a3aea-7510-4904-87b2-7f803a9fb194" />
 
 
 
