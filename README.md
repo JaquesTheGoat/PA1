@@ -6,6 +6,7 @@ This repository contains Python scripts created to address various problems in E
 - [Introduction](#introduction)
 - [Alphabet Soup Problem](#alphabet-soup-problem)
 - [Emoticon Problem](#emoticon-problem)
+- [Unpacking list Problem](#unpacking-list-problem)
 
 ---
 
